@@ -2,23 +2,23 @@ let character = []
 
 var createCharacter = (div) => {
 	const persona = document.getElementById(div)
-	const distance = 0
-	return {persona, distance}
+	const position = 0
+	return {persona, position}
 }
 
-var keyEvent = (character, distance) => {
+var keyEvent = (character, position) => {
 	document.addEventListener('keydown', function(event){
 		let keyPress = String.fromCharCode(event.keyCode)
 		if (keyPress == "D") {
-			distance += 10
+			position += 10
 			/*adiciona efeito de corrida ao personagem*/
-			character.style.transform="translateX("+distance+"px)"
+			character.style.transform="translateX("+position+"px)"
 			run(character, 1)
 		}
 		if (keyPress == "A") {
-			distance -= 10
+			position -= 10
 			/*adiciona efeito de corrida ao personagem*/
-			character.style.transform="translateX("+distance+"px)"
+			character.style.transform="translateX("+position+"px)"
 			run(character, -1)
 		}
 	})
@@ -40,5 +40,5 @@ var run  = (character,state) => {
 character[0] = createCharacter('character1')
 	//character[1] = createCharacter('character2')
 
-	console.log(keyEvent(character[0].persona, character[0].distance))
-	//console.log(keyEvent(character[1].persona, character[1].distance))
+	console.log(keyEvent(character[0].persona, character[0].position))
+	//console.log(keyEvent(character[1].persona, character[1].position))
