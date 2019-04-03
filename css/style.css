@@ -1,0 +1,15 @@
+#character1{
+	width: 110px;
+	height: 150px;
+	background: url("../images/1.png");
+}
+@keyframes runRight{
+	/*pega a primeira fileira de imagens*/
+	0%{background-position: 0px 0px;}
+	100%{background-position: -864px 0px;}
+}
+@keyframes runLeft{
+	/*define os valores em pixels para pegar a carreira de imagens debaixo*/
+	0%{background-position: -864px 140px;}
+	100%{background-position: 0px 140px;}
+}
