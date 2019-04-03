@@ -1,15 +1,27 @@
 #character1{
-	width: 110px;
+	width: 107px;
 	height: 150px;
+	--img-width: -864px;
+	--img-height: 140px;
+	--steps: 8;
 	background: url("../images/1.png");
+}
+#character2{
+	width: 50px;
+	height: 94px;
+	--img-width: -1428px;
+	--img-height: 94px;
+	--steps: 20;
+	background: url("../images/spriteCrash.png");
 }
 @keyframes runRight{
 	/*pega a primeira fileira de imagens*/
 	0%{background-position: 0px 0px;}
-	100%{background-position: -864px 0px;}
+	100%{background-position: var(--img-width) 0px;}
 }
 @keyframes runLeft{
 	/*define os valores em pixels para pegar a carreira de imagens debaixo*/
-	0%{background-position: -864px 140px;}
-	100%{background-position: 0px 140px;}
+	/*funciona de acordo com o valor atribuido ao personagem*/
+	0%{background-position: var(--img-width) var(--img-height);}
+	100%{background-position: 0px var(--img-height);}
 }

@@ -1,6 +1,12 @@
-let character1 = document.getElementById('character1')
-var distance = 0
-var keyEvent = (character) => {
+let character = []
+
+var createCharacter = (div) => {
+	const persona = document.getElementById(div)
+	const distance = 0
+	return {persona, distance}
+}
+
+var keyEvent = (character, distance) => {
 	document.addEventListener('keydown', function(event){
 		let keyPress = String.fromCharCode(event.keyCode)
 		if (keyPress == "D") {
@@ -9,13 +15,13 @@ var keyEvent = (character) => {
 			character.style.transform="translateX("+distance+"px)"
 			run(character, 1)
 		}
-			if (keyPress == "A") {
-				distance -= 10
-				/*adiciona efeito de corrida ao personagem*/
-				character.style.transform="translateX("+distance+"px)"
-				run(character, -1)
-			}
-		})
+		if (keyPress == "A") {
+			distance -= 10
+			/*adiciona efeito de corrida ao personagem*/
+			character.style.transform="translateX("+distance+"px)"
+			run(character, -1)
+		}
+	})
 	document.addEventListener('keyup', function(event){
 		let keyPress = String.fromCharCode(event.keyCode)
 		run(character, 0)
@@ -23,9 +29,16 @@ var keyEvent = (character) => {
 }
 
 var run  = (character,state) => {
-	if (state == 0) {character.style.animationPlayState="paused"}
-		if (state == 1) {character.style.animation="runRight 1s steps(8) infinite"}
-			if (state == -1) {character.style.animation="runLeft 1s steps(8) infinite"}
-		}
+	if (state == 0)
+		character.style.animationPlayState="paused"
+	if (state == 1)
+		character.style.animation="runRight 1s steps(var(--steps)) infinite"
+	if (state == -1)
+		character.style.animation="runLeft 1s steps(var(--steps)) infinite"
+}
 
-	console.log(keyEvent(character1))
+character[0] = createCharacter('character1')
+	//character[1] = createCharacter('character2')
+
+	console.log(keyEvent(character[0].persona, character[0].distance))
+	//console.log(keyEvent(character[1].persona, character[1].distance))
