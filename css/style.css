@@ -3,7 +3,7 @@ body{
 	padding: 0;
 }
 #background{
-	width: 100%;
+	width: 140%;
 	height: 600px;
 	background: url("../images/background.png");
 	background-repeat: no-repeat;
@@ -17,7 +17,7 @@ body{
 	--steps: 8;
 	background: url("../images/1.png");
 	position: relative;
-	top: 16.6em;
+	top: 26.2em;
 }
 #character2{
 	width: 50px;
@@ -27,7 +27,7 @@ body{
 	--steps: 20;
 	background: url("../images/spriteCrash.png");
 	position: relative;
-	top: 16.6em;
+	top: 26.2em;
 }
 @keyframes runRight{
 	/*pega a primeira fileira de imagens*/
