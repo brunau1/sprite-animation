@@ -1,2 +1,2 @@
 # sprite-animation
-An algorithm that creates a simple animation using javaScript and CSS on HTML5
+An algorithm that creates a simple animation using javaScript and CSS keyframes on HTML5
